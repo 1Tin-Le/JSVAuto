@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "../webcalc"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "../Intro JavaScript"
+		},
+		{
+			"path": "../Intro JavaScript/Lesson-02_ClassProject"
+		}
+	],
+	"settings": {}
+}

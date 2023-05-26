@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css">
+</head>
+<body>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src='https://cdn.jsdelivr.net/npm/big.js@6.2.1/big.min.js'></script>
+
+    <h1>JSVAuto: Automatically version your script tags!</h1>
+    <p>This web app can help automatically version script tags in your HTML files (as text) so that you can ensure browsers always use the latest version of your files instead of their cached, old ones.</p>
+    <br>
+    <p>Prior to versioning, all your script tags should have a query string parameter named "autoVer", like this (ignore the bar thing at the end): </p>
+    <br>
+
+    <img src="https://i.ibb.co/DfxJkpk/good-Example-JSVauto.png" alt="What you should do, if you could see it.. D:" border="0">
+
+    <p>Our code increments each version file by 0.0001, but our system accepts any number. If your query string params isn't already formatted, we'll do it for you!</p>
+    <form>
+        <label for="input">Input:</label>
+        <textarea rows="15" cols="80" id="input" name="input" placeholder="Dump script tags (or HTML text)"></textarea>
+        <button id="submit">Update!</button>
+    </form>
+    <p>Your result:</p>
+    <p id="result">hi</p>
+    <script src="versioner.js?autoVer='0.00007'"></script>
+</body>
