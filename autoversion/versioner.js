@@ -4,13 +4,13 @@ let currentInput = [];
 let inputManipulator = {
     queryCollect: function(input) {
         // Match for any instances of a script version tag, then bag it into the array
-        currentInput = input.match(/(?<=autoVer=').*(?=')/g)
+        currentInput = input.match(inputAndClearRegExp)
         console.log("Data collected: ", currentInput)
         return currentInput;
     },
     queryClear: function(input) {
         // clear out version script tags
-        input = input.replace(/(?<=autoVer=').*(?=')/g, "")
+        input = input.replace(inputAndClearRegExp, "")
         return input
     },
     queryFormatAndUpdateQueryInput: function() {
@@ -33,10 +33,10 @@ let inputManipulator = {
     queryReplace: function(input) {
         currentInput.forEach(function(updatedTag) {
             // get the whole thing (?autoVer='') and replace it
-            input = input.replace("?autoVer=''", "?autoVer='" + updatedTag + "'")
-            console.log(input, 'in the making')
+            input = input.replace(queryReplaceRegExp, `?${stringParamName}='${updatedTag}'`)
+            console.log(queryReplaceRegExp, "queryReplaceRegExp")
         })
-        console.log(input, "Final, updated version!! :D (glad i made it work after 2m mtohsnadejjands)")
+        console.log(input, "Final Version Printed to page")
         return input;
         }
     }
@@ -46,7 +46,6 @@ $(document).ready(function () {
         ev.preventDefault();
         let userInput = document.getElementById('input').value.toString();
         console.log(userInput)
-
         console.log(inputManipulator.queryCollect(userInput))
         userInput = inputManipulator.queryClear(userInput)
         console.log(userInput, "Input Cleared")
@@ -57,5 +56,3 @@ $(document).ready(function () {
         $("#result").html("<pre>" + $("<div>").text(userInput).html() + "</pre>");
     })
 })
-    /*            const output = `<pre>${userInput}</pre>`;
-            $("#result").html(output);*/

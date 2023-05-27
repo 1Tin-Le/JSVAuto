@@ -17,11 +17,17 @@
 
     <p>Our code increments each version file by 0.0001, but our system accepts any number. If your query string params isn't already formatted, we'll do it for you!</p>
     <form>
+        <p>Optionally, you can select another string param name other than autoVer below:</p>
+        <br>
+        <label for="stringParamNameSelect"></label>
+        <input type="text" id="stringParamNameSelect" name="stringParamNameSelect" placeholder="Input alternative here..">
+        
         <label for="input">Input:</label>
         <textarea rows="15" cols="80" id="input" name="input" placeholder="Dump script tags (or HTML text)"></textarea>
         <button id="submit">Update!</button>
     </form>
     <p>Your result:</p>
     <p id="result">hi</p>
-    <script src="versioner.js?autoVer='0.00007'"></script>
+    <script src="stringParamNames.js?autoVer='0.00001'"></script>
+    <script src="versioner.js?autoVer='0.00008'"></script>
 </body>
